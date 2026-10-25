@@ -1,0 +1,43 @@
+.page {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: clamp(8px, 2.2vw, 30px);
+  overflow: hidden;
+  background: radial-gradient(circle at 14% 12%, rgba(255, 196, 80, 0.2), transparent 28%),
+    radial-gradient(circle at 84% 82%, rgba(63, 175, 245, 0.18), transparent 32%),
+    linear-gradient(145deg, #0a1322 0%, #111e31 54%, #09101b 100%);
+}
+
+.page::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.16;
+}
+
+.page::after {
+  position: absolute;
+  top: -34vmax;
+  right: -24vmax;
+  width: 66vmax;
+  height: 66vmax;
+  pointer-events: none;
+  content: '';
+  background: radial-gradient(circle, rgba(255, 203, 83, 0.12), transparent 62%);
+  border-radius: 50%;
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 980px, calc(133.333vh - 85.333px));
+  width: min(100%, 980px, calc(133.333dvh - 85.333px));
+  margin: auto;
+}

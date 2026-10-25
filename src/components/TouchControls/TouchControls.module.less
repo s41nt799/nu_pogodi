@@ -1,0 +1,59 @@
+.controls {
+  position: absolute;
+  right: 0;
+  bottom: max(8px, 1.6cqw);
+  left: 0;
+  z-index: 25;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 clamp(10px, 2.2cqw, 24px);
+  pointer-events: none;
+}
+
+.button {
+  display: grid;
+  width: clamp(46px, 8.5cqw, 76px);
+  aspect-ratio: 1;
+  padding: 0;
+  place-items: center;
+  color: #1a2b3d;
+  cursor: pointer;
+  touch-action: none;
+  pointer-events: auto;
+  background: linear-gradient(180deg, rgba(255, 250, 234, 0.93) 0%, rgba(255, 226, 155, 0.92) 100%);
+  border: clamp(2px, 0.45cqw, 4px) solid rgba(26, 43, 61, 0.78);
+  border-radius: 50%;
+  box-shadow: 0 5px 0 rgba(25, 47, 66, 0.45), 0 10px 20px rgba(13, 35, 49, 0.22), inset 0 2px 0 rgba(255, 255, 255, 0.7);
+  transition: transform 100ms ease, box-shadow 100ms ease, filter 100ms ease;
+
+  svg {
+    width: 54%;
+    height: 54%;
+  }
+
+  &:hover {
+    filter: brightness(1.04);
+  }
+
+  &:active {
+    box-shadow: 0 2px 0 rgba(25, 47, 66, 0.45), 0 4px 10px rgba(13, 35, 49, 0.18),
+      inset 0 2px 0 rgba(255, 255, 255, 0.7);
+    transform: translateY(3px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid #fff8df;
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 620px) {
+  .controls {
+    bottom: 6px;
+    padding: 0 10px;
+  }
+
+  .button {
+    width: 48px;
+  }
+}

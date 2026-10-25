@@ -1,0 +1,161 @@
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #5dbde9 0%, #91daf7 44%, #d9f4ff 68%, #fff8d8 var(--ground-height), #fff8d8 100%);
+}
+
+.sun {
+  position: absolute;
+  top: 17%;
+  right: 9%;
+  width: 12%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle at 38% 34%, #fffbd6 0%, #ffe072 48%, #ffc63f 75%, #f7ad2e 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.8cqw rgba(255, 241, 174, 0.24), 0 0 6cqw rgba(255, 210, 86, 0.42);
+  animation: sunPulse 6s ease-in-out infinite;
+}
+
+.cloud {
+  position: absolute;
+  height: 5.8%;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 999px;
+  filter: drop-shadow(0 8px 14px rgba(64, 139, 177, 0.16));
+  animation: cloudDrift 32s ease-in-out infinite;
+
+  &::before,
+  &::after {
+    position: absolute;
+    bottom: 8%;
+    content: '';
+    background: inherit;
+    border-radius: 50%;
+  }
+
+  &::before {
+    left: 12%;
+    width: 58%;
+    aspect-ratio: 1;
+  }
+
+  &::after {
+    right: 10%;
+    bottom: 18%;
+    width: 42%;
+    aspect-ratio: 1;
+  }
+}
+
+.cloudOne {
+  top: 15%;
+  left: 5%;
+  width: 19%;
+}
+
+.cloudTwo {
+  top: 29%;
+  right: 17%;
+  width: 13%;
+  opacity: 0.72;
+  animation-duration: 40s;
+  animation-direction: reverse;
+}
+
+.cloudThree {
+  top: 8%;
+  left: 44%;
+  width: 10%;
+  opacity: 0.56;
+  animation-duration: 48s;
+}
+
+.hills {
+  position: absolute;
+  right: -6%;
+  bottom: var(--ground-height);
+  left: -6%;
+  height: 20%;
+  background: radial-gradient(ellipse at 23% 108%, #84bd58 0 46%, transparent 47%),
+    radial-gradient(ellipse at 67% 112%, #74ad4b 0 51%, transparent 52%), linear-gradient(transparent 68%, #a4d477 68%);
+  opacity: 0.88;
+}
+
+.fence {
+  position: absolute;
+  right: 0;
+  bottom: var(--ground-height);
+  left: 0;
+  z-index: 1;
+  height: 9%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 7.5%,
+    rgba(180, 118, 58, 0.88) 7.5% 9.4%,
+    transparent 9.4% 16%
+  );
+  border-top: 0.55cqw solid #c58b4c;
+  border-bottom: 0.4cqw solid #a66f38;
+  opacity: 0.88;
+
+  &::after {
+    position: absolute;
+    top: 42%;
+    right: 0;
+    left: 0;
+    height: 12%;
+    content: '';
+    background: rgba(169, 108, 50, 0.8);
+  }
+}
+
+.ground {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  height: var(--ground-height);
+  background: linear-gradient(180deg, #a6e568 0%, #7bc84b 22%, #54a234 100%);
+  border-top: 0.7cqw solid #c2f083;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background-image: radial-gradient(circle at 18% 34%, rgba(255, 255, 255, 0.22) 0 1px, transparent 2px),
+      radial-gradient(circle at 72% 62%, rgba(33, 92, 29, 0.15) 0 1px, transparent 2px);
+    background-size: 44px 26px;
+  }
+}
+
+@keyframes sunPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes cloudDrift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(2.2cqw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sun,
+  .cloud {
+    animation: none;
+  }
+}

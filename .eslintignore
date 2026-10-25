@@ -1,0 +1,12 @@
+node_modules
+.idea
+.vscode
+
+_build
+ci
+config
+3pc
+sdl
+coverage
+docs
+scripts

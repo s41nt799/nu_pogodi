@@ -1,0 +1,28 @@
+import type { GameConfig } from './types';
+
+export const gameConfig: GameConfig = {
+  width: 800,
+  height: 600,
+  groundHeight: 64,
+  wolfWidth: 112,
+  wolfHeight: 88,
+  wolfSpeed: 440,
+  wolfCatchInsetX: 8,
+  wolfCatchInsetTop: 10,
+  wolfCatchInsetBottom: 6,
+  eggWidth: 28,
+  eggHeight: 38,
+  eggSidePadding: 16,
+  initialLives: 3,
+  baseFallSpeed: 150,
+  fallSpeedIncrease: 32,
+  maxFallSpeed: 640,
+  difficultyRampMs: 12000,
+  maxDifficultyLevel: 15,
+  spawnIntervalMs: 1300,
+  spawnIntervalDecrease: 90,
+  minSpawnIntervalMs: 380,
+  initialSpawnDelayMs: 900,
+  maxFrameDeltaSec: 0.05,
+  highScoreStorageKey: 'nupogodi.high-score',
+};

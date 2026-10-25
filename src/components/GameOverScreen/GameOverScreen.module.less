@@ -1,0 +1,215 @@
+.screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+}
+
+.dim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at 50% 42%, rgba(21, 39, 56, 0.1) 0%, rgba(6, 16, 29, 0.72) 72%),
+    rgba(7, 17, 30, 0.38);
+  backdrop-filter: blur(2px);
+}
+
+.soundCorner {
+  position: absolute;
+  top: clamp(10px, 2cqw, 20px);
+  right: clamp(10px, 2cqw, 20px);
+  z-index: 12;
+}
+
+.panel {
+  position: relative;
+  z-index: 3;
+  width: min(74%, 600px);
+  max-height: 90%;
+  padding: clamp(16px, 3.4cqw, 34px) clamp(20px, 4.4cqw, 44px);
+  overflow-y: auto;
+  text-align: center;
+  background: linear-gradient(155deg, #fffdf4 0%, #fff8e3 58%, #ffe9b4 100%);
+  border: clamp(2px, 0.45cqw, 4px) solid #1a2b3d;
+  border-radius: clamp(16px, 2.6cqw, 28px);
+  box-shadow: 0.9cqw 0.9cqw 0 #b37a2a, 0 28px 60px rgba(0, 0, 0, 0.4);
+  animation: panelIn 280ms ease-out;
+}
+
+.kicker {
+  display: inline-flex;
+  padding: 0.55em 1.05em;
+  font-size: clamp(9px, 1.35cqw, 13px);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #fff7de;
+  text-transform: uppercase;
+  background: #d45145;
+  border-radius: 999px;
+  box-shadow: 0 3px 0 #8e2e2a;
+}
+
+.title {
+  margin: 0.35em 0 0.12em;
+  font-family: 'Arial Black', 'Segoe UI Black', Impact, sans-serif;
+  font-size: clamp(28px, 5.6cqw, 54px);
+  line-height: 0.92;
+  color: #1a2b3d;
+  letter-spacing: -0.045em;
+}
+
+.text {
+  margin: 0 0 clamp(12px, 2.2cqw, 20px);
+  font-size: clamp(11px, 1.55cqw, 15px);
+  line-height: 1.35;
+  color: #5b6878;
+}
+
+.scoreBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08em;
+  align-items: center;
+  padding: clamp(8px, 1.6cqw, 15px) 12px;
+  background: rgba(37, 59, 82, 0.08);
+  border: 2px dashed rgba(37, 59, 82, 0.22);
+  border-radius: clamp(12px, 1.8cqw, 18px);
+}
+
+.scoreLabel {
+  font-size: clamp(9px, 1.35cqw, 13px);
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: #778493;
+  text-transform: uppercase;
+}
+
+.scoreValue {
+  font-family: 'Arial Black', 'Segoe UI Black', Impact, sans-serif;
+  font-size: clamp(38px, 8.4cqw, 82px);
+  font-variant-numeric: tabular-nums;
+  line-height: 0.96;
+  color: #d26728;
+  text-shadow: 0 0.1em 0 rgba(111, 51, 18, 0.14);
+}
+
+.recordRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(9px, 1.7cqw, 15px);
+  font-size: clamp(11px, 1.55cqw, 15px);
+}
+
+.recordLabel {
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #687687;
+  text-transform: uppercase;
+}
+
+.recordValue {
+  font-size: 1.3em;
+  font-variant-numeric: tabular-nums;
+  color: #263a4f;
+}
+
+.recordBadge {
+  padding: 0.3em 0.75em;
+  font-size: 0.85em;
+  font-weight: 900;
+  color: #fff9e7;
+  text-transform: uppercase;
+  background: #3d7e46;
+  border-radius: 999px;
+  transform: rotate(-2deg);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(8px, 1.5cqw, 14px);
+  margin-top: clamp(14px, 2.6cqw, 24px);
+
+  button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 620px) {
+  .panel {
+    width: 86%;
+    max-height: 94%;
+    padding: 10px 14px;
+  }
+
+  .kicker {
+    padding: 0.45em 0.9em;
+    font-size: 8px;
+  }
+
+  .title {
+    margin-top: 0.28em;
+    margin-bottom: 0.2em;
+    font-size: clamp(22px, 6.8cqw, 34px);
+    line-height: 1;
+  }
+
+  .text {
+    display: none;
+  }
+
+  .scoreBox {
+    padding: 5px 8px;
+  }
+
+  .scoreLabel {
+    font-size: 8px;
+  }
+
+  .scoreValue {
+    font-size: clamp(30px, 9cqw, 44px);
+  }
+
+  .recordRow {
+    gap: 0.3em;
+    margin-top: 5px;
+    font-size: 10px;
+  }
+
+  .recordBadge {
+    padding: 0.25em 0.5em;
+  }
+
+  .actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    margin-top: 8px;
+
+    button {
+      padding: 8px 6px;
+      font-size: 11px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}

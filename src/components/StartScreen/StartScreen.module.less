@@ -1,0 +1,240 @@
+.screen {
+  background: #8ed8f4;
+}
+
+.soundCorner {
+  position: absolute;
+  top: clamp(10px, 2cqw, 20px);
+  right: clamp(10px, 2cqw, 20px);
+  z-index: 12;
+}
+
+.content {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 6% 8% 18%;
+  text-align: center;
+}
+
+.kicker {
+  display: inline-flex;
+  padding: 0.6em 1.1em;
+  font-size: clamp(9px, 1.45cqw, 14px);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #ffe38a;
+  text-transform: uppercase;
+  background: #1b2c40;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(27, 44, 64, 0.22);
+  transform: rotate(-1.5deg);
+}
+
+.title {
+  margin: 0.28em 0 0;
+  font-family: 'Arial Black', 'Segoe UI Black', Impact, sans-serif;
+  font-size: clamp(2rem, 9cqw, 5.4rem);
+  line-height: 0.9;
+  color: #fff8df;
+  letter-spacing: -0.045em;
+  text-shadow: 0 0.18cqw 0 #a05a32, 0 0.42cqw 0 #743b24, 0 1cqw 2.2cqw rgba(27, 52, 70, 0.42);
+  transform: rotate(-1deg);
+}
+
+.subtitle {
+  max-width: 58ch;
+  margin: clamp(12px, 2.2cqw, 22px) 0 0;
+  padding: 0.7em 1.2em;
+  font-size: clamp(12px, 1.75cqw, 18px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #23374c;
+  background: rgba(255, 252, 240, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 1.1em;
+  box-shadow: 0 8px 20px rgba(48, 94, 115, 0.12);
+  backdrop-filter: blur(3px);
+}
+
+.playButton {
+  margin-top: clamp(16px, 3cqw, 30px);
+  padding-right: clamp(34px, 6cqw, 60px);
+  padding-left: clamp(34px, 6cqw, 60px);
+  font-size: clamp(16px, 2.35cqw, 23px);
+}
+
+.best,
+.bestHint {
+  margin: clamp(10px, 1.8cqw, 16px) 0 0;
+  padding: 0.42em 1em;
+  font-size: clamp(11px, 1.55cqw, 15px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #24374c;
+  background: rgba(255, 246, 214, 0.78);
+  border-radius: 999px;
+}
+
+.best strong {
+  color: #a35b19;
+}
+
+.bestHint {
+  color: #52677b;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.hint {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55em 1.1em;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(12px, 2.2cqw, 20px);
+  font-size: clamp(9px, 1.3cqw, 12px);
+  font-weight: 700;
+  color: #344b60;
+
+  span {
+    display: inline-flex;
+    gap: 0.3em;
+    align-items: center;
+    white-space: nowrap;
+  }
+}
+
+.hint kbd {
+  display: inline-grid;
+  min-width: 1.9em;
+  height: 1.9em;
+  padding: 0 0.45em;
+  place-items: center;
+  font-family: inherit;
+  font-size: 0.95em;
+  color: #fff8e6;
+  background: #253a50;
+  border-radius: 0.38em;
+  box-shadow: 0 2px 0 #101d2c;
+}
+
+.mascots {
+  position: absolute;
+  right: 0;
+  bottom: calc(var(--ground-height, 10.6667%) - 1%);
+  left: 0;
+  z-index: 2;
+  height: 29%;
+  pointer-events: none;
+}
+
+.wolfMascot {
+  position: absolute;
+  bottom: 0;
+  left: 3.2%;
+  width: 25%;
+  filter: drop-shadow(0 12px 10px rgba(28, 66, 28, 0.22));
+  animation: mascotBob 3.4s ease-in-out infinite;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+.chickenMascot {
+  position: absolute;
+  right: 4.5%;
+  bottom: 2%;
+  width: 14%;
+  filter: drop-shadow(0 8px 8px rgba(28, 66, 28, 0.2));
+  animation: mascotBob 3.9s ease-in-out 0.4s infinite;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+.egg {
+  position: absolute;
+  width: 2.8%;
+  aspect-ratio: 28 / 38;
+  background: radial-gradient(circle at 34% 26%, #fffef7 0%, #fff6dc 45%, #e8cf99 100%);
+  border: 1px solid rgba(137, 95, 38, 0.4);
+  border-radius: 50% 50% 47% 47% / 62% 62% 38% 38%;
+  box-shadow: 0 5px 8px rgba(28, 66, 28, 0.15);
+}
+
+.eggOne {
+  bottom: 2%;
+  left: 31%;
+  transform: rotate(-13deg);
+}
+
+.eggTwo {
+  bottom: 0.5%;
+  left: 35.5%;
+  transform: rotate(7deg);
+}
+
+.eggThree {
+  right: 22%;
+  bottom: 1.5%;
+  transform: rotate(15deg);
+}
+
+@keyframes mascotBob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.4deg);
+  }
+
+  50% {
+    transform: translateY(-4%) rotate(0.5deg);
+  }
+}
+
+@media (max-width: 620px) {
+  .content {
+    padding: 5% 6% 14%;
+  }
+
+  .hint {
+    display: none;
+  }
+
+  .mascots {
+    opacity: 0.82;
+  }
+
+  .wolfMascot {
+    left: 1.5%;
+    width: 22%;
+  }
+
+  .chickenMascot {
+    right: 2.5%;
+    width: 13%;
+  }
+
+  .eggThree {
+    right: 18%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wolfMascot,
+  .chickenMascot {
+    animation: none;
+  }
+}

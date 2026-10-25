@@ -1,0 +1,12 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 30000,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.workingDirectories": [ ".." ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "eslint.run": "onSave"
+}

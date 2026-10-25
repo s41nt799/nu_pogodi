@@ -1,0 +1,27 @@
+:root {
+  color: #f8f4e8;
+  font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, sans-serif;
+  background: #0a1322;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
